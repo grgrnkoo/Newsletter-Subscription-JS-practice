@@ -1,0 +1,218 @@
+:root {
+    --primary: hsl(4, 100%, 67%);
+    --primary-transparent: hsla(4, 100%, 67%, 20%);
+    --dark-slate-gray: hsl(234, 29%, 20%);
+    --charcoal-gray: hsl(235, 18%, 26%);
+    --gray: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--charcoal-gray);
+    color: var(--charcoal-gray);
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+.hidden {
+    transform: scale(0);
+}
+
+.active {
+    transform: scale(1);
+}
+
+.window {
+    height: fit-content;
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signform {
+    max-width: 930px;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.successmessage {
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    max-width: 500px;
+    padding: 3rem 4rem;
+    h2 {
+        margin-top: 2rem;
+    }
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+ul {
+    margin-bottom: 2.5rem;
+    list-style: inside none;
+}
+
+li {
+    display: flex;
+    margin: .7rem 0;
+}
+
+li span {
+    margin: auto 0 auto 1rem;
+    position: relative;
+    width: fit-content;
+}
+
+.leftside {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 3.5rem 0 2.5rem;
+}
+
+.rightside {
+    display: flex;
+}
+
+.rightside img {
+    display: flex;
+    flex: 1;
+}
+
+h2, p {
+    margin: 1rem 0;
+    width: 100%;
+}
+
+button, input {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 1.2rem;
+    margin: .8rem 0;
+    font-size: 1.1rem;
+}
+
+button {
+    background-color: var(--dark-slate-gray);
+    color: var(--white);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(90deg, var(--primary), #ff6700);
+    box-shadow: 0 10px 25px var(--primary);
+}
+
+input[type='email'].noerror {
+    border: 1px solid var(--gray);
+}
+
+input[type='email']:focus {
+    border: 1px solid var(--charcoal-gray);
+}
+
+label {
+    font-weight: 700;
+    font-size: .8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+span.error {
+    color: var(--primary);
+    display: inline;
+}
+
+span.noerror {
+    display: none;
+}
+
+span.email {
+    font-weight: 700;   
+    cursor: pointer;
+}
+
+input[type='email'].error {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    background-color: var(--primary-transparent);
+}
+
+.error::placeholder {
+    color: var(--primary);
+}
+
+@media only screen and (max-width: 900px) {
+    .signform {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .leftside {
+        padding: 2rem 5rem 2rem 4rem;
+    }
+
+    .rightside {
+        width: 100%;
+    }
+
+    .rightside picture, .rightside img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .window {
+        border-radius: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .successmessage {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 700px) { 
+    h2 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+    .window {
+        .leftside {
+            padding: 0 1.5rem 1rem 1.5rem;
+        }
+    }
+}
