@@ -46,6 +46,7 @@ body {
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s;
 }
 
 .signform {
